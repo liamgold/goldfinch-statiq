@@ -2,10 +2,6 @@
 
 <p>
   <a href="https://github.com/liamgold/liamgold.github.io-source/">
-    <img alt="GitHub Actions status" src="https://github.com/liamgold/liamgold.github.io-source/workflows/CI%20-%20Validation/badge.svg">
-  </a>
-
-  <a href="https://github.com/liamgold/liamgold.github.io-source/">
     <img alt="GitHub Actions status" src="https://github.com/liamgold/liamgold.github.io-source/workflows/CI%20-%20Release/badge.svg">
   </a>
 </p>
