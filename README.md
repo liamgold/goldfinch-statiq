@@ -1,8 +1,14 @@
 # Liam Goldfinch - [goldfinch.me](https://www.goldfinch.me)
 
-<a href="https://github.com/liamgold/liamgold.github.io-source/">
-  <img alt="GitHub Actions status" src="https://github.com/liamgold/liamgold.github.io-source/workflows/GitHub%20Pages%20CI/badge.svg">
-</a>
+<p>
+  <a href="https://github.com/liamgold/liamgold.github.io-source/">
+    <img alt="GitHub Actions status" src="https://github.com/liamgold/liamgold.github.io-source/workflows/CI%20-%20Validation/badge.svg">
+  </a>
+
+  <a href="https://github.com/liamgold/liamgold.github.io-source/">
+    <img alt="GitHub Actions status" src="https://github.com/liamgold/liamgold.github.io-source/workflows/CI%20-%20Release/badge.svg">
+  </a>
+</p>
 
 #### 💻 This is the published version of the site
 
