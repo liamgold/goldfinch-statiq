@@ -1,9 +1,9 @@
-exports.ids = ["vendors~react-syntax-highlighter_languages_highlight_javascript"];
+exports.ids = ["vendors~react-syntax-highlighter_languages_highlight_typescript"];
 exports.modules = {
 
-/***/ "./node_modules/react-syntax-highlighter/node_modules/highlight.js/lib/languages/javascript.js":
+/***/ "./node_modules/react-syntax-highlighter/node_modules/highlight.js/lib/languages/typescript.js":
 /*!*****************************************************************************************************!*\
-  !*** ./node_modules/react-syntax-highlighter/node_modules/highlight.js/lib/languages/javascript.js ***!
+  !*** ./node_modules/react-syntax-highlighter/node_modules/highlight.js/lib/languages/typescript.js ***!
   \*****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -600,10 +600,103 @@ function javascript(hljs) {
   };
 }
 
-module.exports = javascript;
+/*
+Language: TypeScript
+Author: Panu Horsmalahti <panu.horsmalahti@iki.fi>
+Contributors: Ike Ku <dempfi@yahoo.com>
+Description: TypeScript is a strict superset of JavaScript
+Website: https://www.typescriptlang.org
+Category: common, scripting
+*/
+
+/** @type LanguageFn */
+function typescript(hljs) {
+  const IDENT_RE$1 = IDENT_RE;
+  const NAMESPACE = {
+    beginKeywords: 'namespace', end: /\{/, excludeEnd: true
+  };
+  const INTERFACE = {
+    beginKeywords: 'interface', end: /\{/, excludeEnd: true,
+    keywords: 'interface extends'
+  };
+  const USE_STRICT = {
+    className: 'meta',
+    relevance: 10,
+    begin: /^\s*['"]use strict['"]/
+  };
+  const TYPES = [
+    "any",
+    "void",
+    "number",
+    "boolean",
+    "string",
+    "object",
+    "never",
+    "enum"
+  ];
+  const TS_SPECIFIC_KEYWORDS = [
+    "type",
+    "namespace",
+    "typedef",
+    "interface",
+    "public",
+    "private",
+    "protected",
+    "implements",
+    "declare",
+    "abstract",
+    "readonly"
+  ];
+  const KEYWORDS$1 = {
+    $pattern: IDENT_RE,
+    keyword: KEYWORDS.concat(TS_SPECIFIC_KEYWORDS).join(" "),
+    literal: LITERALS.join(" "),
+    built_in: BUILT_INS.concat(TYPES).join(" ")
+  };
+  const DECORATOR = {
+    className: 'meta',
+    begin: '@' + IDENT_RE$1,
+  };
+
+  const swapMode = (mode, label, replacement) => {
+    const indx = mode.contains.findIndex(m => m.label === label);
+    if (indx === -1) { throw new Error("can not find mode to replace"); }
+    mode.contains.splice(indx, 1, replacement);
+  };
+
+  const tsLanguage = javascript(hljs);
+
+  // this should update anywhere keywords is used since
+  // it will be the same actual JS object
+  Object.assign(tsLanguage.keywords, KEYWORDS$1);
+
+  tsLanguage.exports.PARAMS_CONTAINS.push(DECORATOR);
+  tsLanguage.contains = tsLanguage.contains.concat([
+    DECORATOR,
+    NAMESPACE,
+    INTERFACE,
+  ]);
+
+  // TS gets a simpler shebang rule than JS
+  swapMode(tsLanguage, "shebang", hljs.SHEBANG());
+  // JS use strict rule purposely excludes `asm` which makes no sense
+  swapMode(tsLanguage, "use_strict", USE_STRICT);
+
+  const functionDeclaration = tsLanguage.contains.find(m => m.className === "function");
+  functionDeclaration.relevance = 0; // () => {} is more typical in TypeScript
+
+  Object.assign(tsLanguage, {
+    name: 'TypeScript',
+    aliases: ['ts']
+  });
+
+  return tsLanguage;
+}
+
+module.exports = typescript;
 
 
 /***/ })
 
 };;
-//# sourceMappingURL=vendors~react-syntax-highlighter_languages_highlight_javascript.render-page.js.map
+//# sourceMappingURL=vendors~react-syntax-highlighter_languages_highlight_typescript.render-page.js.map
