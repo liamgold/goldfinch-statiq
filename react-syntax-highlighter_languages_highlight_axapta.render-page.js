@@ -42,7 +42,7 @@ function axapta(hljs) {
     'default',
     'false',
     'null',
-    'true',
+    'true'
   ];
 
   const NORMAL_KEYWORDS = [
@@ -85,7 +85,7 @@ function axapta(hljs) {
     'firstonly100',
     'firstonly1000',
     'flush',
-    'for', 
+    'for',
     'forceliterals',
     'forcenestedloop',
     'forceplaceholders',
@@ -93,7 +93,7 @@ function axapta(hljs) {
     'forupdate',
     'from',
     'generateonly',
-    'group', 
+    'group',
     'hint',
     'if',
     'implements',
@@ -129,7 +129,7 @@ function axapta(hljs) {
     'select',
     'server',
     'setting',
-    'static', 
+    'static',
     'sum',
     'super',
     'switch',
@@ -145,7 +145,7 @@ function axapta(hljs) {
     'validtimestate',
     'void',
     'where',
-    'while',
+    'while'
   ];
 
   const KEYWORDS = {
@@ -166,14 +166,19 @@ function axapta(hljs) {
       hljs.C_NUMBER_MODE,
       {
         className: 'meta',
-        begin: '#', end: '$'
+        begin: '#',
+        end: '$'
       },
       {
         className: 'class',
-        beginKeywords: 'class interface', end: '{', excludeEnd: true,
+        beginKeywords: 'class interface',
+        end: /\{/,
+        excludeEnd: true,
         illegal: ':',
         contains: [
-          {beginKeywords: 'extends implements'},
+          {
+            beginKeywords: 'extends implements'
+          },
           hljs.UNDERSCORE_TITLE_MODE
         ]
       }

@@ -132,7 +132,7 @@ function stylus(hljs) {
     'video'
   ];
 
-  var LOOKAHEAD_TAG_END = '(?=[\\.\\s\\n\\[\\:,])';
+  var LOOKAHEAD_TAG_END = '(?=[.\\s\\n[:,])';
 
   var ATTRIBUTES = [
     'align-content',
@@ -382,7 +382,7 @@ function stylus(hljs) {
 
       // id tag
       {
-        begin: '\\#[a-zA-Z][a-zA-Z0-9_-]*' + LOOKAHEAD_TAG_END,
+        begin: '#[a-zA-Z][a-zA-Z0-9_-]*' + LOOKAHEAD_TAG_END,
         className: 'selector-id'
       },
 
