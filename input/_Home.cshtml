@@ -1,0 +1,16 @@
+﻿@model Goldfinch.Models.Home;
+
+@{
+    ViewBag.Title = @Model.SeoMetaTitle;
+}
+
+<div class="">
+    <h1 class="">@Model.BaseTitle</h1>
+    <div class="">
+        @Model.BodyCopy
+
+        <br />
+        <br />
+        @await Html.PartialAsync("_Test")
+    </div>
+</div>

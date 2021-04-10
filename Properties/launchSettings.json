@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Goldfinch": {
+      "commandName": "Project",
+      "commandLineArgs": "preview"
+    }
+  }
+}
