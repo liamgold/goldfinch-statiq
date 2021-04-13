@@ -16,7 +16,7 @@ namespace Goldfinch.Pipelines
             InputModules = new ModuleList
             {
                 new Kontent<Home>(client).WithQuery(new LimitParameter(1)),
-                new MergeContent(new ReadFiles("_Home.cshtml")),
+                new MergeContent(new ReadFiles("Home/_Home.cshtml")),
             };
 
             ProcessModules = new ModuleList

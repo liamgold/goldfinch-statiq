@@ -15,7 +15,7 @@ namespace Goldfinch.Pipelines
             InputModules = new ModuleList
             {
                 new Kontent<BlogDetail>(client),
-                new MergeContent(new ReadFiles("_BlogDetail.cshtml")),
+                new MergeContent(new ReadFiles("Blog/_Detail.cshtml")),
             };
 
             ProcessModules = new ModuleList

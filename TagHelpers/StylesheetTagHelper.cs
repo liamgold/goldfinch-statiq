@@ -11,7 +11,7 @@ namespace Goldfinch.TagHelpers
         {
             output.TagName = null;
 
-            output.PostContent.SetContent($"[[/styles/{File}.css]]");
+            output.PostContent.SetContent($"[[/assets/styles/{File}.css]]");
         }
     }
 }

@@ -1,0 +1,22 @@
+﻿@import 'base/normalize';
+
+body {
+    background: #ffffff;
+    color: #444444;
+}
+
+a {
+    font-weight: bold;
+    color: #444444;
+}
+
+.sr-only {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
