@@ -1,6 +1,5 @@
 ﻿using Goldfinch.Models;
 using Kentico.Kontent.Delivery.Abstractions;
-using Kentico.Kontent.Delivery.Urls.QueryParameters;
 using Kontent.Statiq;
 using Statiq.Common;
 using Statiq.Core;
@@ -9,20 +8,20 @@ using Statiq.Razor;
 
 namespace Goldfinch.Pipelines
 {
-    public class HomePipeline : Pipeline
+    public class BlogDetailPipeline : Pipeline
     {
-        public HomePipeline(IDeliveryClient client)
+        public BlogDetailPipeline(IDeliveryClient client)
         {
             InputModules = new ModuleList
             {
-                new Kontent<Home>(client).WithQuery(new LimitParameter(1)),
-                new MergeContent(new ReadFiles("_Home.cshtml")),
+                new Kontent<BlogDetail>(client),
+                new MergeContent(new ReadFiles("_BlogDetail.cshtml")),
             };
 
             ProcessModules = new ModuleList
             {
-                new RenderRazor().WithModel(KontentConfig.As<Home>()),
-                new SetDestination(new NormalizedPath("index.html")),
+                new RenderRazor().WithModel(KontentConfig.As<BlogDetail>()),
+                new SetDestination(Config.FromDocument((doc, ctx)  => new NormalizedPath($"blog/{doc.AsKontent<BlogDetail>().UrlSlug}.html" ))),
             };
 
             OutputModules = new ModuleList
