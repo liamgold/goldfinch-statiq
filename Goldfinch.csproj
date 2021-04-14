@@ -12,8 +12,12 @@
 
   <ItemGroup>
     <PackageReference Include="Kontent.Statiq" Version="1.0.0-*" />
-    <PackageReference Include="Statiq.Minification" Version="1.0.0-beta.39" />
-    <PackageReference Include="Statiq.Web" Version="1.0.0-beta.25" />
+    <PackageReference Include="Statiq.Minification" Version="1.0.0-beta.40" />
+    <PackageReference Include="Statiq.Web" Version="1.0.0-beta.26" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="input\assets\fonts\" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,16 @@
 ﻿@import 'base/normalize';
+@import 'base/fonts';
+
+html {
+    font: 112.5%/1.45 'Open Sans',sans-serif;
+    overflow-y: scroll;
+}
 
 body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
     background: #ffffff;
     color: #444444;
 }
@@ -20,3 +30,13 @@ a {
     position: absolute;
     width: 1px;
 }
+
+main {
+    flex: 1 1 0%;
+    width: 100%;
+    max-width: 1200px;
+    padding: 40px 20px;
+}
+
+@import 'components/component-header';
+@import 'components/component-footer';
