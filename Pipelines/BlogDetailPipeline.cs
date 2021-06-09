@@ -1,9 +1,10 @@
 ﻿using Goldfinch.Models;
+using Goldfinch.Modules;
 using Kentico.Kontent.Delivery.Abstractions;
+using Kentico.Kontent.Delivery.Urls.QueryParameters;
 using Kontent.Statiq;
 using Statiq.Common;
 using Statiq.Core;
-using Statiq.Minification;
 using Statiq.Razor;
 
 namespace Goldfinch.Pipelines
@@ -14,20 +15,23 @@ namespace Goldfinch.Pipelines
         {
             InputModules = new ModuleList
             {
-                new Kontent<BlogDetail>(client),
-                new MergeContent(new ReadFiles("Blog/_Detail.cshtml")),
+                new Kontent<BlogDetail>(client).WithQuery(new OrderParameter($"elements.{BlogDetail.PostDateCodename}", SortOrder.Descending)),
             };
 
             ProcessModules = new ModuleList
             {
-                new RenderRazor().WithModel(KontentConfig.As<BlogDetail>()),
+                new MergeContent(new ReadFiles("Blog/_Detail.cshtml")),
                 new SetDestination(Config.FromDocument((doc, ctx)  => new NormalizedPath($"blog/{doc.AsKontent<BlogDetail>().UrlSlug}.html" ))),
+                new RenderRazor().WithModel(KontentConfig.As<BlogDetail>()),
+            };
+
+            PostProcessModules = new ModuleList
+            {
+                new ComponentStylingModule(),
             };
 
             OutputModules = new ModuleList
             {
-                new ComponentStylingModule(),
-                new MinifyCss(),
                 new WriteFiles(),
             };
         }

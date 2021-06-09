@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Goldfinch.Pipelines
+namespace Goldfinch.Modules
 {
     public class ComponentStylingModule : ParallelModule
     {

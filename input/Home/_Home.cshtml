@@ -1,18 +1,15 @@
 ﻿@model Goldfinch.Models.Home;
 
 @{
-    ViewBag.Title = @Model.SeoMetaTitle;
+    ViewBag.Title = $"{Model.SeoMetaTitle} · Liam Goldfinch";
 }
 
-<div class="">
-    <h1 class="">@Model.BaseTitle</h1>
-    <div class="">
+<div>
+    <h1>@Model.BaseTitle</h1>
+    <div>
         @foreach (var item in Model.BodyCopy.Blocks)
         {
             @Html.Raw(item);
-
         }
-        @*@await Html.PartialAsync("_Test")*@
     </div>
 </div>
-<stylesheet file="home"></stylesheet>

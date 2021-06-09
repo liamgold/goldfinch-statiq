@@ -12,8 +12,7 @@
 
   <ItemGroup>
     <PackageReference Include="Kontent.Statiq" Version="1.0.0-*" />
-    <PackageReference Include="Statiq.Minification" Version="1.0.0-beta.40" />
-    <PackageReference Include="Statiq.Web" Version="1.0.0-beta.26" />
+    <PackageReference Include="Statiq.Web" Version="1.0.0-beta.30" />
   </ItemGroup>
 
   <ItemGroup>

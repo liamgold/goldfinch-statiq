@@ -1,18 +1,59 @@
 ﻿@model Goldfinch.Models.ViewModels.BlogListViewModel
 
 @{
-    ViewBag.Title = @Model.BlogListing?.SeoMetaTitle;
+    ViewBag.Title = $"{Model.BlogListing?.SeoMetaTitle} · Liam Goldfinch";
+
+    string nextUrl = null, previousUrl = null;
+
+    if (Model.PagedContent.Previous != null)
+    {
+        var previousIndex = Model.PagedContent.Previous.Index == 1 ? string.Empty : $"{Model.PagedContent.Previous.Index}/";
+        previousUrl = $"{Html.GetUrl(BlogListing.Codename)}{previousIndex}";
+    }
+
+    if (Model.PagedContent.Next != null)
+    {
+        nextUrl = $"{Html.GetUrl(BlogListing.Codename)}{Model.PagedContent.Next.Index}/";
+    }
 }
 
-<div class="">
-    <h1 class="">@Model.BlogListing?.BaseTitle</h1>
-    <div class="">
-        @*@foreach (var item in Model.BodyCopy.Blocks)
-            {
-                @Html.Raw(item);
+<div>
+    <h1>@Model.BlogListing?.BaseTitle</h1>
+    <div class="blog-list">
+        @foreach (var item in Model.PagedContent.Items)
+        {
+            <div class="blog-card">
+                <a href="@Html.GetUrl(item.System.Type, item.UrlSlug)">@item.BaseTitle</a>
+                <span>@item.PostDate?.ToString("d")</span>
+                <p>@item.Summary</p>
+            </div>
+        }
+    </div>
 
-            }*@
-        @*@await Html.PartialAsync("_Test")*@
+    <div>
+        <ul class="pagination">
+            @if (!string.IsNullOrWhiteSpace(previousUrl))
+            {
+                <li><a rel="prev" href="@previousUrl">Previous</a></li>
+            }
+
+            @for (var index = 1; index <= Model.PagedContent.TotalPages; index++)
+            {
+                if (index == 1)
+                {
+                    <li><a href="@($"{Html.GetUrl(BlogListing.Codename)}")">1</a></li>
+                }
+                else
+                {
+                    <li><a href="@($"{Html.GetUrl(BlogListing.Codename)}"){index}/">@index</a></li>
+                }
+            }
+
+            @if (!string.IsNullOrWhiteSpace(nextUrl))
+            {
+                <li><a rel="next" href="@nextUrl">Next</a></li>
+            }
+        </ul>
     </div>
 </div>
 <stylesheet file="bloglist"></stylesheet>

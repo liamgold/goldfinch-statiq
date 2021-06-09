@@ -367,3 +367,4 @@ FodyWeavers.xsd
 
 # Custom
 appsettings.json
+cache/
