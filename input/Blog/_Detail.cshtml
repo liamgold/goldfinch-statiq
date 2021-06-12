@@ -1,12 +1,13 @@
-﻿@model Goldfinch.Models.BlogDetail;
+﻿@model Goldfinch.Models.ViewModels.BlogDetailViewModel;
 
 @{
-    ViewBag.Title = Model.SeoMetaTitle;
+    ViewBag.Title = Model.BlogDetail.SeoMetaTitle;
+    ViewBag.Canonical = string.IsNullOrWhiteSpace(Model.BlogDetail.SeoCanonicalUrl) ? Model.CurrentUrl : Model.BlogDetail.SeoCanonicalUrl;
 }
 
 <div>
-    <h1>@Model.BaseTitle</h1>
+    <h1>@Model.BlogDetail.BaseTitle</h1>
     <div>
-        @Html.DisplayFor(vm => vm.BodyCopy)
+        @Html.DisplayFor(vm => vm.BlogDetail.BodyCopy)
     </div>
 </div>

@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Goldfinch.Models;
+using Goldfinch.Resolvers;
 using Kentico.Kontent.Delivery.Abstractions;
 using Kentico.Kontent.Delivery.Extensions;
 using Microsoft.Extensions.Configuration;
@@ -20,6 +21,7 @@ namespace Goldfinch
             {
                 // Add the type provider
                 services.AddSingleton<ITypeProvider, CustomTypeProvider>();
+                services.AddSingleton<IContentLinkUrlResolver, CustomContentLinkUrlResolver>();
                 // Configure Delivery SDK
                 services.AddDeliveryClient((IConfiguration)config);
             })

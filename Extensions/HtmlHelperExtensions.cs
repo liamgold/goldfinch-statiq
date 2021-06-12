@@ -9,6 +9,7 @@ namespace Goldfinch.Extensions
         {
             return type switch
             {
+                Home.Codename => "/",
                 BlogDetail.Codename => $"/blog/{urlSlug}",
                 BlogListing.Codename => "/blog/",
                 _ => "/",

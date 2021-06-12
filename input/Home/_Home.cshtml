@@ -1,12 +1,13 @@
-﻿@model Goldfinch.Models.Home;
+﻿@model Goldfinch.Models.ViewModels.HomeViewModel;
 
 @{
-    ViewBag.Title = Model.SeoMetaTitle;
+    ViewBag.Title = Model.Home.SeoMetaTitle;
+    ViewBag.Canonical = string.IsNullOrWhiteSpace(Model.Home.SeoCanonicalUrl) ? Model.CurrentUrl : Model.Home.SeoCanonicalUrl;
 }
 
 <div>
-    <h1>@Model.BaseTitle</h1>
+    <h1>@Model.Home.BaseTitle</h1>
     <div>
-        @Html.DisplayFor(vm => vm.BodyCopy)
+        @Html.DisplayFor(vm => vm.Home.BodyCopy)
     </div>
 </div>

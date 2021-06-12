@@ -1,5 +1,4 @@
-﻿using Goldfinch.Extensions;
-using Goldfinch.Models;
+﻿using Goldfinch.Models;
 using Goldfinch.Models.ViewModels;
 using Goldfinch.Modules;
 using Kentico.Kontent.Delivery.Abstractions;
@@ -42,7 +41,7 @@ namespace Goldfinch.Pipelines
                 new RenderRazor()
                     .WithModel(Config.FromDocument((doc, ctx) =>
                     {
-                        return new BlogListViewModel(doc.AsPagedKontent<BlogDetail>(), _blogListing);
+                        return new BlogListViewModel(doc, _blogListing);
                     }
                 )),
             };

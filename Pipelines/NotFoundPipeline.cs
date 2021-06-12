@@ -1,4 +1,5 @@
 ﻿using Goldfinch.Models;
+using Goldfinch.Models.ViewModels;
 using Goldfinch.Modules;
 using Kentico.Kontent.Delivery.Abstractions;
 using Kentico.Kontent.Delivery.Urls.QueryParameters;
@@ -22,7 +23,12 @@ namespace Goldfinch.Pipelines
             {
                 new MergeContent(new ReadFiles("Error/_NotFound.cshtml")),
                 new SetDestination(new NormalizedPath("404.html")),
-                new RenderRazor().WithModel(KontentConfig.As<Error>()),
+                new RenderRazor()
+                    .WithModel(Config.FromDocument((doc, ctx) =>
+                    {
+                        return new ErrorViewModel(doc);
+                    }
+                )),
             };
 
             PostProcessModules = new ModuleList

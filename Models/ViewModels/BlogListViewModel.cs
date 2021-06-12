@@ -1,11 +1,14 @@
-﻿namespace Goldfinch.Models.ViewModels
+﻿using Goldfinch.Extensions;
+using Statiq.Common;
+
+namespace Goldfinch.Models.ViewModels
 {
-    public class BlogListViewModel
+    public class BlogListViewModel : BaseViewModel
     {
-        public BlogListViewModel(PagedContent<BlogDetail> pagedContent, BlogListing blogListing = null)
-        {
+        public BlogListViewModel(IDocument document, BlogListing blogListing) : base(document)
+        {            
             BlogListing = blogListing;
-            PagedContent = pagedContent;
+            PagedContent = document.AsPagedKontent<BlogDetail>();
         }
 
         public BlogListing BlogListing { get; }
