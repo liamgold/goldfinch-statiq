@@ -1,0 +1,12 @@
+﻿@model Goldfinch.Models.Error;
+
+@{
+    ViewBag.Title = Model.SeoMetaTitle;
+}
+
+<div>
+    <h1>@Model.BaseTitle</h1>
+    <div>
+        @Html.DisplayFor(vm => vm.BodyCopy)
+    </div>
+</div>

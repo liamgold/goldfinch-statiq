@@ -12,6 +12,7 @@ namespace Goldfinch.Models
             {typeof(BlogDetail), "blog_detail"},
             {typeof(BlogListing), "blog_listing"},
             {typeof(CodeBlock), "code_block"},
+            {typeof(Error), "error"},
             {typeof(Home), "home"},
             {typeof(Image), "image"}
         };
