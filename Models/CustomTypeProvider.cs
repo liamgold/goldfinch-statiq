@@ -13,7 +13,7 @@ namespace Goldfinch.Models
             {typeof(BlogListing), "blog_listing"},
             {typeof(CodeBlock), "code_block"},
             {typeof(Home), "home"},
-            //{typeof(Image), "image"}
+            {typeof(Image), "image"}
         };
 
         public Type GetType(string contentType)

@@ -17,22 +17,37 @@ namespace Goldfinch.Modules
             var matches = Regex.Matches(content, ComponentStylingRegex);
 
             var cssLinks = new List<string>();
+            var jsLinks = new List<string>();
 
             foreach (Match match in matches)
             {
-                var cssLink = match.Groups[1].Value;
+                var link = match.Groups[1].Value.Split('|');
 
-                if (!cssLinks.Contains(cssLink))
+                switch (link[0])
                 {
-                    cssLinks.Add(cssLink);
+                    case "javascript":
+                        if (!jsLinks.Contains(link[1]))
+                        {
+                            jsLinks.Add(link[1]);
+                        }
+                        break;
+                    case "stylesheet":
+                        if (!cssLinks.Contains(link[1]))
+                        {
+                            cssLinks.Add(link[1]);
+                        }
+                        break;
+                    default:
+                        break;
                 }
             }
 
+            var jsString = string.Join(string.Empty, jsLinks.Select(x => $"<script src=\"{x}\"></script>"));
             var cssString = string.Join(string.Empty, cssLinks.Select(x => $"<link rel=\"stylesheet\" href=\"{x}\" />"));
 
             var result = Regex.Replace(content, ComponentStylingRegex, string.Empty);
 
-            result = result.Replace("[ComponentStyles]", cssString);
+            result = result.Replace("[ComponentStyles]", $"{cssString}{jsString}");
 
             return input.Clone(context.GetContentProvider(result, MediaTypes.Html)).Yield();
         }

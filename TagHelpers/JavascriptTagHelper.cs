@@ -2,7 +2,7 @@
 
 namespace Goldfinch.TagHelpers
 {
-    public class StylesheetTagHelper : TagHelper
+    public class JavascriptTagHelper : TagHelper
     {
         [HtmlAttributeName("file")]
         public string File { get; set; }
@@ -11,7 +11,7 @@ namespace Goldfinch.TagHelpers
         {
             output.TagName = null;
 
-            output.PostContent.SetContent($"[[stylesheet|/assets/styles/{File}.css]]");
+            output.PostContent.SetContent($"[[javascript|/assets/scripts/{File}.js]]");
         }
     }
 }

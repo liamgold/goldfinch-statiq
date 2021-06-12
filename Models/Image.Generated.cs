@@ -13,9 +13,9 @@ namespace Goldfinch.Models
     public partial class Image
     {
         public const string Codename = "image";
-        public const string ImageCodename = "image";
+        public const string ImageassetCodename = "imageasset";
 
-        public IEnumerable<IAsset> Image { get; set; }
+        public IEnumerable<IAsset> Imageasset { get; set; }
         public IContentItemSystemAttributes System { get; set; }
     }
 }

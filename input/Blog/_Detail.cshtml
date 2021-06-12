@@ -7,9 +7,6 @@
 <div>
     <h1>@Model.BaseTitle</h1>
     <div>
-        @foreach (var item in Model.BodyCopy.Blocks)
-        {
-            @Html.Raw(item);
-        }
+        @Html.DisplayFor(vm => vm.BodyCopy)
     </div>
 </div>

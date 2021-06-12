@@ -1,0 +1,13 @@
+﻿@model Image
+
+@foreach (var item in Model.Imageasset)
+{
+    <figure class="figure">
+        <img src="@item.Url" class="figure__image" alt="@item.Description" loading="lazy">
+
+        @if (!string.IsNullOrWhiteSpace(item.Description))
+        {
+            <figcaption class="figure__caption">@item.Description</figcaption>
+        }
+    </figure>
+}
