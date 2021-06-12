@@ -1,7 +1,7 @@
 ﻿@model Goldfinch.Models.ViewModels.BlogListViewModel
 
 @{
-    ViewBag.Title = $"{Model.BlogListing?.SeoMetaTitle} · Liam Goldfinch";
+    ViewBag.Title = Model.BlogListing?.SeoMetaTitle;
 
     string nextUrl = null, previousUrl = null;
 
