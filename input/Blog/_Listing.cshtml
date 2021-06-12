@@ -12,11 +12,13 @@
     {
         var previousIndex = Model.PagedContent.Previous.Index == 1 ? string.Empty : $"{Model.PagedContent.Previous.Index}/";
         previousUrl = $"{Html.GetUrl(BlogListing.Codename)}{previousIndex}";
+        ViewBag.PreviousUrl = $"https://www.goldfinch.me{previousUrl}";
     }
 
     if (Model.PagedContent.Next != null)
     {
         nextUrl = $"{Html.GetUrl(BlogListing.Codename)}{Model.PagedContent.Next.Index}/";
+        ViewBag.NextUrl = $"https://www.goldfinch.me{nextUrl}";
     }
 }
 
@@ -48,7 +50,7 @@
                 }
                 else
                 {
-                    <li><a href="@($"{Html.GetUrl(BlogListing.Codename)}"){index}/">@index</a></li>
+                    <li><a href="@($"{Html.GetUrl(BlogListing.Codename)}{index}")/">@index</a></li>
                 }
             }
 
