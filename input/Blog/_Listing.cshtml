@@ -27,7 +27,7 @@
         {
             <div class="blog-card">
                 <a href="@Html.GetUrl(item.System.Type, item.UrlSlug)">@item.BaseTitle</a>
-                <span>@item.PostDate?.ToString("d")</span>
+                <span>@item.PostDate?.ToString("dd/MM/yyyy")</span>
                 <p>@item.Summary</p>
             </div>
         }
