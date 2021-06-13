@@ -7,9 +7,9 @@ using System.Linq;
 
 namespace Goldfinch.Pipelines
 {
-    public class SiteMapPipeline : Pipeline
+    public class Sitemap : Pipeline
     {
-        public SiteMapPipeline()
+        public Sitemap()
         {
             Dependencies.AddRange(
                 nameof(BlogDetailPipeline),
