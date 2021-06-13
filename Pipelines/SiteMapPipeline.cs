@@ -1,4 +1,5 @@
-﻿using Kontent.Statiq;
+﻿using Goldfinch.Modules;
+using Kontent.Statiq;
 using Statiq.Common;
 using Statiq.Core;
 using System;
@@ -40,7 +41,7 @@ namespace Goldfinch.Pipelines
                     return siteMapItem;
                 })),
 
-                new GenerateSitemap(),
+                new CustomGenerateSitemap(),
             };
 
             OutputModules = new ModuleList
