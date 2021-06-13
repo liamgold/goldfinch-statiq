@@ -55,5 +55,29 @@ h1 {
   font-family: "Roboto", "Arial", sans-serif;
 }
 
+strong {
+  word-break: break-word;
+}
+
+.figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 0 0 25px 0;
+
+  img {
+    max-width: 100%;
+    padding: 0;
+    margin: 0 0 25px 0;
+    border-style: none;
+  }
+
+  figcaption {
+    font-style: italic;
+    font-size: 16px;
+  }
+}
+
 @import "components/component-header";
 @import "components/component-footer";
