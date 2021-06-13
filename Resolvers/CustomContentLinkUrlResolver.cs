@@ -1,4 +1,4 @@
-﻿using Goldfinch.Models;
+﻿using Goldfinch.Models.ContentTypes;
 using Kentico.Kontent.Delivery.Abstractions;
 using System.Threading.Tasks;
 

@@ -8,19 +8,21 @@ using System;
 using System.Collections.Generic;
 using Kentico.Kontent.Delivery.Abstractions;
 
-namespace Goldfinch.Models
+namespace Goldfinch.Models.ContentTypes
 {
-    public partial class BlogListing
+    public partial class Home
     {
-        public const string Codename = "blog_listing";
+        public const string Codename = "home";
         public const string BaseTeaserImageCodename = "base__teaser_image";
         public const string BaseTitleCodename = "base__title";
+        public const string BodyCopyCodename = "body_copy";
         public const string SeoCanonicalUrlCodename = "seo__canonical_url";
         public const string SeoMetaDescriptionCodename = "seo__meta_description";
         public const string SeoMetaTitleCodename = "seo__meta_title";
 
         public IEnumerable<IAsset> BaseTeaserImage { get; set; }
         public string BaseTitle { get; set; }
+        public IRichTextContent BodyCopy { get; set; }
         public string SeoCanonicalUrl { get; set; }
         public string SeoMetaDescription { get; set; }
         public string SeoMetaTitle { get; set; }

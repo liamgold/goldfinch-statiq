@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using Goldfinch.Models;
+﻿using Goldfinch.Models.ContentTypes;
 using Goldfinch.Resolvers;
 using Kentico.Kontent.Delivery.Abstractions;
 using Kentico.Kontent.Delivery.Extensions;
@@ -8,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Statiq.App;
 using Statiq.Common;
 using Statiq.Web;
+using System.Threading.Tasks;
 
 namespace Goldfinch
 {

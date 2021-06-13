@@ -10,5 +10,7 @@ namespace Goldfinch.Models.ViewModels
         }
 
         public string CurrentUrl { get; }
+
+        public SeoData SeoData { get; set; }
     }
 }

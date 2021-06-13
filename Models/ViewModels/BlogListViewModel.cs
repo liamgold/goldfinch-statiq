@@ -1,5 +1,7 @@
 ﻿using Goldfinch.Extensions;
+using Goldfinch.Models.ContentTypes;
 using Statiq.Common;
+using System.Linq;
 
 namespace Goldfinch.Models.ViewModels
 {
@@ -9,6 +11,13 @@ namespace Goldfinch.Models.ViewModels
         {            
             BlogListing = blogListing;
             PagedContent = document.AsPagedKontent<BlogDetail>();
+            SeoData = new SeoData
+            {
+                Title = BlogListing.SeoMetaTitle,
+                Description = BlogListing.SeoMetaDescription,
+                Image = BlogListing.BaseTeaserImage?.FirstOrDefault()?.Url,
+                Url = document.GetLink(true)
+            };
         }
 
         public BlogListing BlogListing { get; }

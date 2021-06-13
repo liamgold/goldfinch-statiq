@@ -1,4 +1,4 @@
-﻿using Goldfinch.Models;
+﻿using Goldfinch.Models.ContentTypes;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Goldfinch.Extensions

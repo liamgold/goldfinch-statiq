@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = Model.BlogListing.SeoMetaTitle;
     ViewBag.Canonical = string.IsNullOrWhiteSpace(Model.BlogListing.SeoCanonicalUrl) ? Model.CurrentUrl : Model.BlogListing.SeoCanonicalUrl;
+    ViewData["SeoData"] = Model.SeoData;
 }
 
 @{

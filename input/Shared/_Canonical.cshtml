@@ -1,0 +1,9 @@
+﻿<link rel="canonical" href="@ViewBag.Canonical" />
+@if (!string.IsNullOrWhiteSpace(ViewBag.PreviousUrl))
+{
+    <link rel="prev" href="@ViewBag.PreviousUrl" />
+}
+@if (!string.IsNullOrWhiteSpace(ViewBag.NextUrl))
+{
+    <link rel="next" href="@ViewBag.NextUrl" />
+}

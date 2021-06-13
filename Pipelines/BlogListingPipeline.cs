@@ -1,4 +1,4 @@
-﻿using Goldfinch.Models;
+﻿using Goldfinch.Models.ContentTypes;
 using Goldfinch.Models.ViewModels;
 using Goldfinch.Modules;
 using Kentico.Kontent.Delivery.Abstractions;

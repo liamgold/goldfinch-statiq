@@ -1,0 +1,45 @@
+﻿@model SeoData
+
+<meta name="author" content="Liam Goldfinch" />
+@if (!string.IsNullOrWhiteSpace(Model.Description))
+{
+    <meta name="description" content="@Model.Description" />
+}
+@if (!string.IsNullOrWhiteSpace(Model.Image))
+{
+    <meta name="image" content="@Model.Image?w=360&h=360&fit=crop" />
+}
+@if (!string.IsNullOrWhiteSpace(Model.Url))
+{
+    <meta property="og:url" content="@Model.Url" />
+}
+@if (Model.IsArticle)
+{
+    <meta property="og:type" content="article" />
+}
+@if (!string.IsNullOrWhiteSpace(Model.Title))
+{
+    <meta property="og:title" content="@Model.Title" />
+}
+@if (!string.IsNullOrWhiteSpace(Model.Description))
+{
+    <meta property="og:description" content="@Model.Description" />
+}
+@if (!string.IsNullOrWhiteSpace(Model.Image))
+{
+    <meta property="og:image" content="@Model.Image?w=360&h=360&fit=crop" />
+}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="@@LiamGoldfinch" />
+@if (!string.IsNullOrWhiteSpace(Model.Title))
+{
+    <meta name="twitter:title" content="@Model.Title" />
+}
+@if (!string.IsNullOrWhiteSpace(Model.Description))
+{
+    <meta name="twitter:description" content="@Model.Description" />
+}
+@if (!string.IsNullOrWhiteSpace(Model.Image))
+{
+    <meta name="twitter:image" content="@Model.Image?w=360&h=360&fit=crop" />
+}

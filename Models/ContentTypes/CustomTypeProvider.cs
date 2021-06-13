@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Kentico.Kontent.Delivery.Abstractions;
 
-namespace Goldfinch.Models
+namespace Goldfinch.Models.ContentTypes
 {
     public class CustomTypeProvider : ITypeProvider
     {
