@@ -7,7 +7,7 @@
 }
 @if (!string.IsNullOrWhiteSpace(Model.Image))
 {
-    <meta name="image" content="@Model.Image?w=360&h=360&fit=crop" />
+    <meta name="image" content="@Model.Image" />
 }
 @if (!string.IsNullOrWhiteSpace(Model.Url))
 {
@@ -27,7 +27,7 @@
 }
 @if (!string.IsNullOrWhiteSpace(Model.Image))
 {
-    <meta property="og:image" content="@Model.Image?w=360&h=360&fit=crop" />
+    <meta property="og:image" content="@Model.Image" />
 }
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:creator" content="@@LiamGoldfinch" />
@@ -41,5 +41,5 @@
 }
 @if (!string.IsNullOrWhiteSpace(Model.Image))
 {
-    <meta name="twitter:image" content="@Model.Image?w=360&h=360&fit=crop" />
+    <meta name="twitter:image" content="@Model.Image" />
 }
