@@ -12,10 +12,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#444444">
     <title>@ViewBag.Title · Liam Goldfinch</title>
-    <link rel="stylesheet" href="@IExecutionContext.Current.GetLink("/assets/styles/global.css")" />
-    <link rel="preload" href="@IExecutionContext.Current.GetLink("/assets/fonts/roboto-v27-latin-regular.woff2")" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="@IExecutionContext.Current.GetLink("/assets/fonts/open-sans-v18-latin-regular.woff2")" as="font" type="font/woff2" crossorigin>
-    [ComponentStyles]
+    <link rel="stylesheet" href="@IExecutionContext.Current.GetLink("/assets/styles/styles.css")" />
+    @*<link rel="preload" href="@IExecutionContext.Current.GetLink("/assets/fonts/roboto-v27-latin-regular.woff2")" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="@IExecutionContext.Current.GetLink("/assets/fonts/open-sans-v18-latin-regular.woff2")" as="font" type="font/woff2" crossorigin>*@
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <partial name="_Favicons" />
     <partial name="_Seo" model="seoData" />
