@@ -1,6 +1,22 @@
 ﻿@import "base/normalize";
 @import "base/fonts";
 
+:root {
+  --font-colour: #444444;
+  --bg-colour: #ffffff;
+  --border-colour: #ebebeb;
+  --highlight-colour: #444444;
+  --card-bg-colour: #ebebeb;
+}
+
+[data-theme="dark"] {
+  --font-colour: #bdc1c6;
+  --bg-colour: #202124;
+  --border-colour: #3c4043;
+  --highlight-colour: #bcc0c3;
+  --card-bg-colour: #bcc0c3;
+}
+
 html {
   font: 112.5%/1.45 "Open Sans", sans-serif;
   box-sizing: border-box;
@@ -24,13 +40,13 @@ body {
   min-height: 100vh;
   flex-direction: column;
   align-items: center;
-  background: #ffffff;
-  color: #444444;
+  background: var(--bg-colour);
+  color: var(--font-colour);
 }
 
 a {
   font-weight: bold;
-  color: #444444;
+  color: var(--font-colour);
 }
 
 .sr-only {

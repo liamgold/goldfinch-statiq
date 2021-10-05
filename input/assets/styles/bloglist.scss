@@ -6,10 +6,15 @@
   .blog-card {
     display: flex;
     flex-direction: column;
-    background-color: rgb(235, 235, 235);
     padding: 25px;
     border-radius: 8px;
     margin-bottom: 25px;
+    border: 1px solid var(--border-colour);
+    transition: border-color 0.2s linear;
+
+    &:hover {
+      border: 1px solid var(--highlight-colour);
+    }
 
     @media (min-width: 768px) {
       flex: 0 1 49%;
