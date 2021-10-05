@@ -3,7 +3,7 @@
 @foreach (var item in Model.Imageasset)
 {
     <figure class="figure">
-        <img src="@item.Url" class="figure__image" alt="@item.Description" loading="lazy">
+        <img src="@item.Url?fm=png&auto=format&lossless=1" class="figure__image" alt="@item.Description" loading="lazy">
 
         @if (!string.IsNullOrWhiteSpace(item.Description))
         {

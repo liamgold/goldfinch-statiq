@@ -1,7 +1,7 @@
 ﻿@model Kentico.Kontent.Delivery.Abstractions.IInlineImage
 
 <figure class="figure">
-    <img src="@Model.Url" class="figure__image" alt="@Model.Description" loading="lazy">
+    <img src="@Model.Url?fm=png&auto=format&lossless=1" class="figure__image" alt="@Model.Description" loading="lazy">
 
     @if (!string.IsNullOrWhiteSpace(Model.Description))
     {
