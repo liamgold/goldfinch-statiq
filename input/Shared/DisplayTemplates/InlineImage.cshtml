@@ -1,7 +1,13 @@
 ﻿@model Kentico.Kontent.Delivery.Abstractions.IInlineImage
 
 <figure class="figure">
-    <img src="@Model.Url?fm=png&auto=format&lossless=1" class="figure__image" alt="@Model.Description" loading="lazy">
+    <img srcset="@Model.Url?fm=png&auto=format&lossless=1&w=480 480w,
+             @Model.Url?fm=png&auto=format&lossless=1&w=800 800w,
+             @Model.Url?fm=png&auto=format&lossless=1&w=1000 1000w"
+         sizes="(max-width: 600px) 480px,
+            (max-width: 1000px) 800px,
+            1000px"
+         src="@Model.Url?fm=png&auto=format&lossless=1&w=1000" class="figure__image" alt="@Model.Description" loading="lazy">
 
     @if (!string.IsNullOrWhiteSpace(Model.Description))
     {
