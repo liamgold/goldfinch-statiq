@@ -42,7 +42,7 @@ namespace Goldfinch.Modules
                 }
             }
 
-            var jsString = string.Join(string.Empty, jsLinks.Select(x => $"<script src=\"{x}\"></script>"));
+            var jsString = string.Join(string.Empty, jsLinks.Select(x => $"<script src=\"{x}\" defer></script>"));
             var cssString = string.Join(string.Empty, cssLinks.Select(x => $"<link rel=\"stylesheet\" href=\"{x}\" />"));
 
             var result = Regex.Replace(content, ComponentStylingRegex, string.Empty);
