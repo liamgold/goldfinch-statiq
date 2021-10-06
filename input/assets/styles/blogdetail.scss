@@ -2,5 +2,6 @@
   &__body {
     margin-top: 18px;
     border-top: 1px solid var(--border-colour);
+    transition: border-top 0.2s linear;
   }
 }

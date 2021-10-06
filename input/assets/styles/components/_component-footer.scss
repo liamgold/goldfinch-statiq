@@ -5,6 +5,7 @@
   justify-content: center;
   width: 100%;
   border-top: 1px solid var(--border-colour);
+  transition: border-top 0.2s linear;
 
   section {
     display: flex;
@@ -31,6 +32,7 @@
         width: 30px;
         height: 30px;
         fill: var(--font-colour);
+        transition: fill 0.2s linear;
       }
     }
   }

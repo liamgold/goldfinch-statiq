@@ -4,6 +4,7 @@
   flex-flow: row wrap;
   justify-content: center;
   border-bottom: 1px solid var(--border-colour);
+  transition: border-bottom 0.2s linear;
 
   .picture {
     width: 100px;
@@ -58,6 +59,7 @@
     justify-content: center;
     width: 100%;
     border-top: 1px solid var(--border-colour);
+    transition: border-top 0.2s linear;
     padding: 0px 20px;
 
     ul {

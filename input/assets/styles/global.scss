@@ -40,11 +40,13 @@ body {
   align-items: center;
   background: var(--bg-colour);
   color: var(--font-colour);
+  transition: background-color 0.2s linear, color 0.2s linear;
 }
 
 a {
   font-weight: bold;
   color: var(--font-colour);
+  transition: color 0.2s linear;
 }
 
 .sr-only {
