@@ -5,7 +5,7 @@
 }
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -20,6 +20,15 @@
     <partial name="_Favicons" />
     <partial name="_Seo" model="seoData" />
     <partial name="_Canonical" />
+    <script type="text/javascript">
+        const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+    </script>
+    <javascript file="dark-mode" />
 </head>
 
 <body>

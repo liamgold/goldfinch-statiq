@@ -21,6 +21,38 @@
     align-items: center;
   }
 
+  .icons {
+    display: flex;
+
+    &__dark-mode {
+      display: block;
+      width: 35px;
+      height: 35px;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+
+      [data-theme="light"] & {
+        .sun {
+          display: block;
+        }
+        .moon {
+          display: none;
+        }
+      }
+
+      [data-theme="dark"] & {
+        .sun {
+          display: none;
+        }
+        .moon {
+          display: block;
+          fill: var(--font-colour);
+        }
+      }
+    }
+  }
+
   .navigation {
     display: flex;
     justify-content: center;
