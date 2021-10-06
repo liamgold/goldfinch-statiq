@@ -6,9 +6,11 @@
     ViewData["SeoData"] = Model.SeoData;
 }
 
-<div>
+<div class="blog-detail">
     <h1>@Model.BlogDetail.BaseTitle</h1>
-    <div>
+    <span>@Model.BlogDetail.PostDate?.ToString("dd/MM/yyyy")</span>
+    <div class="blog-detail__body">
         @Html.DisplayFor(vm => vm.BlogDetail.BodyCopy)
     </div>
 </div>
+<stylesheet file="blogdetail"></stylesheet>
