@@ -26,6 +26,12 @@
     &__link {
       margin-left: 5px;
       text-decoration: none;
+
+      svg {
+        width: 30px;
+        height: 30px;
+        fill: var(--font-colour);
+      }
     }
   }
 }
