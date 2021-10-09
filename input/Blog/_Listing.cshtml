@@ -28,11 +28,11 @@
     <div class="blog-list">
         @foreach (var item in Model.PagedContent.Items)
         {
-            <div class="blog-card">
-                <a href="@Html.GetUrl(item.System.Type, item.UrlSlug)">@item.BaseTitle</a>
+            <a href="@Html.GetUrl(item.System.Type, item.UrlSlug)" class="blog-card">
+                <h1>@item.BaseTitle</h1>
                 <span>@item.PostDate?.ToString("dd/MM/yyyy")</span>
                 <p>@item.Summary</p>
-            </div>
+            </a>
         }
     </div>
 
