@@ -14,7 +14,8 @@ namespace Goldfinch.Models.ContentTypes
             {typeof(CodeBlock), "code_block"},
             {typeof(Error), "error"},
             {typeof(Home), "home"},
-            {typeof(Image), "image"}
+            {typeof(Image), "image"},
+            {typeof(YoutubeVideo), "youtube_video"}
         };
 
         public Type GetType(string contentType)
